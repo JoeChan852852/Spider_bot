@@ -1,6 +1,18 @@
 # Spider_bot
 This project uses a Large Language Model (LLM) to control a spider robot via natural language commands. Users can say things like "crawl forward 5 steps" or "scan the area," and the LLM translates them into precise actions.
 
+# Flowchart
+graph TD
+    A[Human Command] --> B{LLM / AI Brain}
+    B --> C[Set of Instructions]
+    C --> D[Spider Robot]
+    C --> E[Other Robots/Actuators]
+    
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#dfd,stroke:#333,stroke-width:2px
+
+
 # Material list
 | Material  | Description                       | Quantity| Price per 1 | Link                                        |
 | :------   | :---------------------------------| :-------|:------------|:--------------------------------------------|
