@@ -7,8 +7,8 @@ This project uses a Large Language Model (LLM) to control a spider robot via nat
 flowchart TD
     A[Human Command] --> B{LLM / AI Brain}
     B --> C[Set of Instructions]
-    C --> D[Spider Robot]
-    C --> E[Other Robots/Actuators]
+    C --> D[Spider Robot Control Board]
+    D --> E[Servo Motor]
     
     style A fill:#f9f,stroke:#333,stroke-width:2px
     style B fill:#bbf,stroke:#333,stroke-width:2px
