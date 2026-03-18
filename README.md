@@ -3,7 +3,8 @@ This project uses a Large Language Model (LLM) to control a spider robot via nat
 
 # Flowchart
 
-graph TD
+```mermaid
+flowchart TD
     A[Human Command] --> B{LLM / AI Brain}
     B --> C[Set of Instructions]
     C --> D[Spider Robot]
@@ -13,16 +14,6 @@ graph TD
     style B fill:#bbf,stroke:#333,stroke-width:2px
     style C fill:#dfd,stroke:#333,stroke-width:2px
 
-```mermaid
-flowchart TD
-    A[Start] --> B[Receive input]
-    B --> C{Valid?}
-    C -->|Yes| D[Process]
-    C -->|No| E[Show error]
-    D --> F[Save / Return result]
-    E --> G[Retry / Exit]
-    F --> H[End]
-    G --> H[End]
 
 
 # Material list
