@@ -13,12 +13,16 @@ graph TD
     style B fill:#bbf,stroke:#333,stroke-width:2px
     style C fill:#dfd,stroke:#333,stroke-width:2px
 
+```mermaid
 flowchart TD
-    A[Start] --> B{Decision?}
-    B -->|Yes| C[Do Something]
-    B -->|No| D[Do Something Else]
-    C --> E[End]
-    D --> E[End]
+    A[Start] --> B[Receive input]
+    B --> C{Valid?}
+    C -->|Yes| D[Process]
+    C -->|No| E[Show error]
+    D --> F[Save / Return result]
+    E --> G[Retry / Exit]
+    F --> H[End]
+    G --> H[End]
 
 
 # Material list
