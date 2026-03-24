@@ -15,7 +15,7 @@ The class combines:
 - Software integration (LLM prompting + robot control code)
 - Creative experimentation (designing new robot behaviors via prompts)
 
-**Target audience**: Middle school / high school / introductory university students interested in AI, robotics, and creative coding.
+**Target audience**: AILT9018 students interested.
 
 ## Why Build Physical Robots?
 We currently have **no working robot hardware**. To run the class effectively with hands-on experience, we need to build:
