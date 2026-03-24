@@ -1,30 +1,89 @@
 # Proposal: LLM-Powered Spider Robot Tutor Class  
 **"Vibe Coding in Robotics" – Teaching Students to Control Robots with Natural Language**
 
-# Spider_bot
-This project uses a Large Language Model (LLM) to control a spider robot via natural language commands. Users can say things like "crawl forward 5 steps" or "scan the area," and the LLM translates them into precise actions.
+## Project Overview
+This tutor class introduces students to **vibe coding** — controlling hardware through natural language commands powered by Large Language Models (LLMs). Students will command a spider robot with phrases like:
 
-# Flowchart
+- "Crawl forward 5 steps"
+- "Turn left and scan the area"
+- "Dance a little wave"
 
+The LLM translates these high-level "vibes" into precise servo instructions, making robotics accessible, fun, and creative without requiring deep low-level coding knowledge upfront.
+
+The class combines:
+- Hardware building (mechanical assembly + electronics)
+- Software integration (LLM prompting + robot control code)
+- Creative experimentation (designing new robot behaviors via prompts)
+
+**Target audience**: Middle school / high school / introductory university students interested in AI, robotics, and creative coding.
+
+## Why Build Physical Robots?
+We currently have **no working robot hardware**. To run the class effectively with hands-on experience, we need to build:
+- **8 robots** for students (one per student or small team)
+- **2 robots** for instructor testing, demonstration, and backup
+
+Total: **10 identical Spider Bots** based on the provided `Spider_bot` project (README_Robot.md).
+
+## Hardware Requirements (Per Robot)
+Based on the material list in the project documentation:
+
+| Material          | Description                          | Quantity per Robot | Unit Price (HKD) | Subtotal per Robot (HKD) |
+|-------------------|--------------------------------------|--------------------|------------------|--------------------------|
+| SG90 Servo       | Servo Motor                          | 8                  | 7                | 56                       |
+| ESP32-S3         | Main Control Board (WiFi ready)      | 1                  | 30               | 30                       |
+| 3D Prints        | Mechanical parts                     | <100 g             | 10               | 10                       |
+| Battery          | Power Source                         | 1                  | 45               | 45                       |
+| **Total per Robot** |                                      |                    |                  | **141 HKD**              |
+
+**Note**: Router and PCB are shared / one-time costs (see below). Prices are taken directly from the project document (Taobao links).
+
+## Total Cost Estimation for 10 Robots
+
+### Per-Robot Components (x10)
+- 80 × SG90 Servos: 80 × 7 = **560 HKD**
+- 10 × ESP32-S3: 10 × 30 = **300 HKD**
+- 3D Prints (~1 kg total filament): 10 × 10 = **100 HKD**
+- 10 × Batteries: 10 × 45 = **450 HKD**
+- **Subtotal (per-robot parts)**: **1,410 HKD**
+
+### Shared / One-Time Items
+- **Router** (shared for the entire class WiFi communication): 1 × 125 HKD = **125 HKD**
+- **PCB** (custom control board, price TBD after design; using conservative upper estimate from document): 10 × 100 HKD = **1,000 HKD** (or lower if simple design / bulk order)
+
+**Grand Total Estimated Cost**: **1,410 + 125 + 1,000 = 2,535 HKD**
+
+This is an extremely budget-friendly setup (~253.5 HKD per robot on average). Actual costs may be slightly lower with bulk purchasing or current market discounts on Taobao/AliExpress.
+
+## How This Class Helps Students
+
+1. **Hands-on "Vibe Coding" Experience**  
+   Students learn that AI can bridge natural language and physical actions. They experiment with prompting techniques, understand LLM limitations, and iteratively improve commands — building intuition for modern AI-human collaboration.
+
+2. **Full Robotics Pipeline**  
+   - Mechanical: 3D-printed parts + servo assembly  
+   - Electronics: Wiring ESP32-S3 and power  
+   - Software: LLM integration + control logic  
+   This gives a complete view of real-world robot development, far beyond simulation.
+
+3. **Creativity & Problem-Solving**  
+   Students design new behaviors ("make the robot look happy"), debug hardware issues, and optimize prompts. It encourages creative thinking rather than rote coding.
+
+4. **Accessibility & Engagement**  
+   Natural language control lowers the barrier for beginners. Students who dislike traditional programming still feel empowered. The "spider" form factor is visually fun and motivating.
+
+5. **Future-Ready Skills**  
+   - Understanding AI + hardware integration (a growing field in robotics, IoT, and automation)  
+   - Prompt engineering  
+   - Basic embedded systems and mechatronics  
+   - Collaborative teamwork (building and sharing robot "personalities")
+
+6. **Low Cost, High Impact**  
+   At under 2,600 HKD total, the program is scalable and repeatable. Students leave with a physical robot they helped build and "taught" to understand them — creating lasting pride and motivation for STEM.
+
+## Implementation Flow (from README)
 ```mermaid
 flowchart TD
     A[Human Command] --> B{LLM / AI Brain}
     B --> C[Set of Instructions]
     C --> D[Spider Robot Control Board]
     D --> E[Servo Motor]
-    
-    style A fill:#f9f,stroke:#333,stroke-width:2px
-    style B fill:#bbf,stroke:#333,stroke-width:2px
-    style C fill:#dfd,stroke:#333,stroke-width:2px
-```
-
-
-# Material list
-| Material  | Description                       | Quantity| Price per 1 | Link                                        |
-| :------   | :---------------------------------| :-------|:------------|:--------------------------------------------|
-| SG90 Servo| Servo Motor                       | 8       |7 HKD        |https://item.taobao.com/item.htm?abbucket=1&id=610238294721&mi_id=0000yYTeIq8m74JKHtri50PiDfXAyjtvye-UI4iT2R2-BAI&ns=1&skuId=4291063233678&spm=a21n57.1.hoverItem.9&utparam=%7B%22aplus_abtest%22%3A%225f3d8418a779c473d48af679462ba02e%22%7D&xxc=taobaoSearch|
-| ESP32S3   |Main Control Board (Wifi Ready!)  | 1        |30 HKD       |https://item.taobao.com/item.htm?abbucket=1&id=724748055478&mi_id=0000AnssKknO0BFufnq5w5yD5C0ktHY9vVsmmSdWj06n1B0&ns=1&priceTId=2100c88c17738178766783986e0cd4&skuId=5944417772255&spm=a21n57.1.hoverItem.5&utparam=%7B%22aplus_abtest%22%3A%22bad3652fd88e1397bb3611ca30ab0ca2%22%7D&xxc=taobaoSearch|
-| 3d Prints | Mechanical parts                 | <100 g   |10 HKD       |https://item.taobao.com/item.htm?abbucket=1&id=1026787364678&mi_id=0000TTxrkYxUAVsApeKTmqpTBxh7gYnCBI0eJgGkttsonDo&ns=1&priceTId=2100c82417738190300523733e0c80&skuId=6036550965895&spm=a21n57.1.hoverItem.3&utparam=%7B%22aplus_abtest%22%3A%224b0f8f4df6fe4870b7115ba9cfec9f09%22%7D&xxc=taobaoSearch|
-|Battary    | Power Source                     | 1        |45 HKD       |https://item.taobao.com/item.htm?abbucket=1&id=796335967435&mi_id=0000mqjQzHJx7C7YzmK8fYdM1AmsHtYLO52cznbd56zhq-8&ns=1&priceTId=2100c82417738192480711269e0c80&skuId=5914005913782&spm=a21n57.1.hoverItem.2&utparam=%7B%22aplus_abtest%22%3A%229259dc0938bffe3289096f5a34f2f6bc%22%7D&xxc=taobaoSearch|
-|Router     | We only need ONE for the class!  |1         |125 HKD      |https://detail.tmall.com/item.htm?abbucket=1&id=548610924784&mi_id=0000eKD6w5oXE1DlYTplgN0qmLYHkAdUq7kYO4aEyjFLZhI&ns=1&skuId=6035779796016&spm=a21n57.1.hoverItem.14&utparam=%7B%22aplus_abtest%22%3A%22ba5f2ccdd7209327890d2fe65d853b0b%22%7D&xxc=taobaoSearch|
-|PCB        | Price TBD after design           |1         | <100 HKD    |https://detail.tmall.com/item.htm?id=624700462793&ns=1&abbucket=1&xxc=taobaoSearch&mi_id=0000lvwON-L2LzMSisFfOg4Cv6aAODc3xAbpqueExJf58nk&skuId=4434348541046&utparam=%7B%22aplus_abtest%22%3A%2216b439b447406bf8caa3b468a9589d67%22%7D&spm=a21n57.1.hoverItem.2|
